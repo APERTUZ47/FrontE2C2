@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Empresas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; }
+        header { background-color: #003366; color: white; padding: 15px; text-align: center; }
+        section { margin: 20px; padding: 10px; }
+        h1 { color: #003366; }
+        .company { border: 1px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 5px; background: #fff; }
+        .company h2 { margin: 0; color: #003366; }
+        .company p { margin: 5px 0; }
+        button { background-color: #003366; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0059b3; }
+        input[type="text"] { width: calc(100% - 20px); padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Empresas de Aeromodelismo</h1>
+    </header>
+    <section>
+        <h1>Buscar Empresa</h1>
+        <input type="text" id="searchBar" placeholder="Escribe el nombre de la empresa..." oninput="searchCompany()">
+        
+        <h1>Listado de Empresas</h1>
+        
+        <div class="company">
+            <h2>AeroTech Industries</h2>
+            <p><strong>País:</strong> Estados Unidos</p>
+            <p><strong>Ciudad:</strong> Seattle</p>
+            <p><strong>Modelos:</strong> UH-60, F-16 Falcon</p>
+            <button onclick="showDetails('AeroTech Industries')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>Classic AeroCraft</h2>
+            <p><strong>País:</strong> Francia</p>
+            <p><strong>Ciudad:</strong> París</p>
+            <p><strong>Modelos:</strong> Cessna 172, Airbus A320</p>
+            <button onclick="showDetails('Classic AeroCraft')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>Skyline Models</h2>
+            <p><strong>País:</strong> Canadá</p>
+            <p><strong>Ciudad:</strong> Toronto</p>
+            <p><strong>Modelos:</strong> Spitfire, P-51 Mustang</p>
+            <button onclick="showDetails('Skyline Models')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>RotorTech Solutions</h2>
+            <p><strong>País:</strong> Alemania</p>
+            <p><strong>Ciudad:</strong> Berlín</p>
+            <p><strong>Modelos:</strong> CH-47 Chinook, AH-64 Apache</p>
+            <button onclick="showDetails('RotorTech Solutions')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>JetStream Inc.</h2>
+            <p><strong>País:</strong> Japón</p>
+            <p><strong>Ciudad:</strong> Tokio</p>
+            <p><strong>Modelos:</strong> Boeing 747, Concorde</p>
+            <button onclick="showDetails('JetStream Inc.')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>Precision Flyers</h2>
+            <p><strong>País:</strong> Reino Unido</p>
+            <p><strong>Ciudad:</strong> Londres</p>
+            <p><strong>Modelos:</strong> Red Arrow, Harrier Jump Jet</p>
+            <button onclick="showDetails('Precision Flyers')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>AeroVista Creations</h2>
+            <p><strong>País:</strong> España</p>
+            <p><strong>Ciudad:</strong> Madrid</p>
+            <p><strong>Modelos:</strong> Eurofighter Typhoon, Mirage 2000</p>
+            <button onclick="showDetails('AeroVista Creations')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>Model Flight Experts</h2>
+            <p><strong>País:</strong> Australia</p>
+            <p><strong>Ciudad:</strong> Sídney</p>
+            <p><strong>Modelos:</strong> C-130 Hercules, Beechcraft Bonanza</p>
+            <button onclick="showDetails('Model Flight Experts')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>FlyPro Designs</h2>
+            <p><strong>País:</strong> Italia</p>
+            <p><strong>Ciudad:</strong> Roma</p>
+            <p><strong>Modelos:</strong> Piaggio P.180, Macchi C.202</p>
+            <button onclick="showDetails('FlyPro Designs')">Ver Detalles</button>
+        </div>
+
+        <div class="company">
+            <h2>NextGen Wings</h2>
+            <p><strong>País:</strong> China</p>
+            <p><strong>Ciudad:</strong> Pekín</p>
+            <p><strong>Modelos:</strong> Chengdu J-20, Shenyang J-31</p>
+            <button onclick="showDetails('NextGen Wings')">Ver Detalles</button>
+        </div>
+        
+        <div id="detailsSection" style="display:none; margin-top: 20px;">
+            <h1>Detalle de la Empresa</h1>
+            <div id="detailsContent" class="company"></div>
+        </div>
+    </section>
+
+    <script>
+        function searchCompany() {
+            const searchValue = document.getElementById('searchBar').value.toLowerCase();
+            const companies = document.querySelectorAll('.company');
+            
+            companies.forEach(company => {
+                const name = company.querySelector('h2').textContent.toLowerCase();
+                if (name.includes(searchValue)) {
+                    company.style.display = 'block';
+                } else {
+                    company.style.display = 'none';
+                }
+            });
+        }
+
+        function showDetails(companyName) {
+            const detailsSection = document.getElementById('detailsSection');
+            const detailsContent = document.getElementById('detailsContent');
+            
+            const companies = {
+                "AeroTech Industries": { country: "Estados Unidos", city: "Seattle", models: ["UH-60", "F-16 Falcon"], employees: 1200 },
+                "Classic AeroCraft": { country: "Francia", city: "París", models: ["Cessna 172", "Airbus A320"], employees: 900 },
+                "Skyline Models": { country: "Canadá", city: "Toronto", models: ["Spitfire", "P-51 Mustang"], employees: 800 },
+                "RotorTech Solutions": { country: "Alemania", city: "Berlín", models: ["CH-47 Chinook", "AH-64 Apache"], employees: 1000 },
+                "JetStream Inc.": { country: "Japón", city: "Tokio", models: ["Boeing 747", "Concorde"], employees: 1100 },
+                "Precision Flyers": { country: "Reino Unido", city: "Londres", models: ["Red Arrow", "Harrier Jump Jet"], employees: 950 },
+                "AeroVista Creations": { country: "España", city: "Madrid", models: ["Eurofighter Typhoon", "Mirage 2000"], employees: 700 },
+                "Model Flight Experts": { country: "Australia", city: "Sídney", models: ["C-130 Hercules", "Beechcraft Bonanza"], employees: 850 },
+                "FlyPro Designs": { country: "Italia", city: "Roma", models: ["Piaggio P.180", "Macchi C.202"], employees: 600 },
+                "NextGen Wings": { country: "China", city: "Pekín", models: ["Chengdu J-20", "Shenyang J-31"], employees: 1050 }
+            };
+
+            const company = companies[companyName];
+            if (company) {
+                detailsContent.innerHTML = `
+                    <h2>${companyName}</h2>
+                    <p><strong>País:</strong> ${company.country}</p>
+                    <p><strong>Ciudad:</strong> ${company.city}</p>
+                    <p><strong>Modelos:</strong> ${company.models.join(", ")}</p>
+                    <p><strong>Empleados:</strong> ${company.employees}</p>
+                `;
+                detailsSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+    

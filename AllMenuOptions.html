@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeromodelos en Venta</title>
+    <style>
+        /* Estilos combinados */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0057a3;
+        }
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+        nav .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        nav .menu a:hover {
+            text-decoration: underline;
+        }
+        nav .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        nav .buttons a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        nav .buttons .sell {
+            background-color: #66bb6a;
+            color: white;
+        }
+        nav .buttons .register {
+            background-color: #66bb6a;
+            color: white;
+        }
+        nav .buttons .login {
+            background-color: transparent;
+            color: #0057a3;
+            border: none;
+        }
+        header {
+            background-color: #002f5b;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+        .welcome-section {
+            padding: 20px;
+            background-color: #e8f4ff;
+            text-align: center;
+        }
+        .highlight-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .highlight-gallery img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .filter-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .filter-section h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .filter-section form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .filter-section input, .filter-section select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card .content {
+            padding: 10px;
+        }
+        .card h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .card p {
+            color: #555;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        footer {
+            background-color: #002f5b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">Aeroseneca</div>
+        <div class="menu">
+            <a href="Comprar.html">Comprar</a>
+            <a href="Vender.html">Vender</a>
+            <a href="Elementos.html">Elementos</a>
+            <a href="Empresas.html">Empresas</a>
+            <a href="Categoria.html">Categorias</a>
+        </div>
+        <div class="buttons">
+            <a href="IniciarSesion.html" class="login">Iniciar Sesión</a>
+            <a href="Registrarse.html" class="register">Registrarse</a>
+        </div>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <header>
+        <h1>Bienvenido a Aeromodelos en Venta</h1>
+        <p>Encuentra los mejores aeromodelos a los mejores precios.</p>
+    </header>
+
+    <!-- Galería destacada -->
+    <section class="welcome-section">
+        <h2>Aeromodelos Destacados</h2>
+        <div class="highlight-gallery">
+            <img src="assets/aero1.jpg" alt="Aeromodelo 1">
+            <img src="assets/aero2.jpg" alt="Aeromodelo 2">
+            <img src="assets/aero3.jpg" alt="Aeromodelo 3">
+        </div>
+    </section>
+
+    <!-- Filtros y tarjetas -->
+    <section class="filter-section">
+        <h2>Búsqueda Rápida</h2>
+        <form>
+            <input type="text" placeholder="Modelo, categoría o región" />
+            <select>
+                <option>Avión</option>
+                <option>Helicóptero</option>
+            </select>
+            <input type="text" placeholder="Fabricante" />
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+    <section class="card-container">
+        <div class="card">
+            <img src="assets/aeromodelo1.png" alt="Aeromodelo 1">
+            <div class="content">
+                <h3>Cirrus SR22 G3 Turbo GTS</h3>
+                <p>Precio: €460,000</p>
+                <p>Ubicación: Europa, Reino Unido</p>
+                <p>Año: 2010 | Total Time: 1490</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/aeromodelo1.png" alt="Aeromodelo 1">
+            <div class="content">
+                <h3>Hawker 800XP</h3>
+                <p>Precio: Por consultar</p>
+                <p>Ubicación: Norteamérica</p>
+                <p>Año: 2005 | Total Time: 2000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aeromodelos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
